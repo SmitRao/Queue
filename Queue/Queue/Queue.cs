@@ -18,9 +18,8 @@ namespace Queue
 
         public void Enqueue(Object toEnqueue, bool isPriority)
         {
-            if (!isPriority) { data.Add(toEnqueue); return; }
-
-            data.Insert(0, toEnqueue);
+            if (isPriority) data.Insert(0, toEnqueue);
+            else { data.Add(toEnqueue); return; }
         }
 
         public Object Dequeue()
@@ -40,6 +39,7 @@ namespace Queue
             if (this.GetSize() > 0)
             {
                 Object firstInLine = data[0];
+                System.Console.WriteLine("Peeking: " + firstInLine);
                 return firstInLine;
             }
 
@@ -54,8 +54,27 @@ namespace Queue
 
         static void Main(string[] args)
         {
+            Queue testQueue = new Queue();
+            Console.WriteLine("Initial size: " + testQueue.GetSize());
+            Object firstDequeue = testQueue.Dequeue();
+            Console.WriteLine("Dequeue from empty queue: " + firstDequeue + " Size = " + testQueue.GetSize());
+            testQueue.Enqueue("Hello");
+            Console.WriteLine("After 1 enqueue... size: " + testQueue.GetSize());
+            Object secondDequeue = testQueue.Dequeue();
+            Console.WriteLine("Dequeue item: " + secondDequeue + " Size = " + testQueue.GetSize());
+            testQueue.Enqueue("ABCD");
+            testQueue.Enqueue("EFGH");
+            testQueue.Enqueue("IJK");
+            testQueue.Enqueue("MLNO");
+            testQueue.PeekFirst();
+            testQueue.Enqueue("PQRS");
+            testQueue.Enqueue("TUV");
+            testQueue.Enqueue("WXYZ", true);
+            Console.WriteLine("Dequeue item: " + testQueue.Dequeue() + " Size = " + testQueue.GetSize());
+            testQueue.PeekFirst();
+            
 
-
+            System.Threading.Thread.Sleep(20000);
         }
     }
 }
