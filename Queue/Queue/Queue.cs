@@ -52,29 +52,29 @@ namespace Queue
         }
 
 
-        static void Main(string[] args)
-        {
-            Queue testQueue = new Queue();
-            Console.WriteLine("Initial size: " + testQueue.GetSize());
-            Object firstDequeue = testQueue.Dequeue();
-            Console.WriteLine("Dequeue from empty queue: " + firstDequeue + " Size = " + testQueue.GetSize());
-            testQueue.Enqueue("Hello");
-            Console.WriteLine("After 1 enqueue... size: " + testQueue.GetSize());
-            Object secondDequeue = testQueue.Dequeue();
-            Console.WriteLine("Dequeue item: " + secondDequeue + " Size = " + testQueue.GetSize());
-            testQueue.Enqueue("ABCD");
-            testQueue.Enqueue("EFGH");
-            testQueue.Enqueue("IJK");
-            testQueue.Enqueue("MLNO");
-            testQueue.PeekFirst();
-            testQueue.Enqueue("PQRS");
-            testQueue.Enqueue("TUV");
-            testQueue.Enqueue("WXYZ", true);
-            Console.WriteLine("Dequeue item: " + testQueue.Dequeue() + " Size = " + testQueue.GetSize());
-            testQueue.PeekFirst();
+        //static void Main(string[] args)
+        //{
+        //    Queue testQueue = new Queue();
+        //    Console.WriteLine("Initial size: " + testQueue.GetSize());
+        //    Object firstDequeue = testQueue.Dequeue();
+        //    Console.WriteLine("Dequeue from empty queue: " + firstDequeue + " Size = " + testQueue.GetSize());
+        //    testQueue.Enqueue("Hello");
+        //    Console.WriteLine("After 1 enqueue... size: " + testQueue.GetSize());
+        //    Object secondDequeue = testQueue.Dequeue();
+        //    Console.WriteLine("Dequeue item: " + secondDequeue + " Size = " + testQueue.GetSize());
+        //    testQueue.Enqueue("ABCD");
+        //    testQueue.Enqueue("EFGH");
+        //    testQueue.Enqueue("IJK");
+        //    testQueue.Enqueue("MLNO");
+        //    testQueue.PeekFirst();
+        //    testQueue.Enqueue("PQRS");
+        //    testQueue.Enqueue("TUV");
+        //    testQueue.Enqueue("WXYZ", true);
+        //    Console.WriteLine("Dequeue item: " + testQueue.Dequeue() + " Size = " + testQueue.GetSize());
+        //    testQueue.PeekFirst();
             
 
-            System.Threading.Thread.Sleep(20000);
-        }
+        //    System.Threading.Thread.Sleep(20000);
+        //}
     }
 }
